@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   const title = "About Chainsaw Man";
@@ -39,7 +40,7 @@ export default function About() {
             <figure>
               <div className="pl-10">
                 <Image
-                  className="border-3 border-black mb-2"
+                  className=" mb-2"
                   src="https://upload.wikimedia.org/wikipedia/en/2/24/Chainsawman.jpg"
                   alt="test"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -62,7 +63,7 @@ export default function About() {
 
         <section>
           <h2 className="text-4xl text-center mb-6">Overview</h2>
-          <p>
+          <p className="mb-12">
             Chainsaw Man follows the story of Denji, an impoverished teenager
             who makes a contract that fuses his body with that of Pochita, the
             dog-like Chainsaw Devil, granting him the ability to transform parts
@@ -76,127 +77,204 @@ export default function About() {
         </section>
 
         <section>
-          <figure className="grid grid-cols-4">
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/0/0f/Volume_01.png/revision/latest/scale-to-width-down/180?cb=20230907225315"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+          <figure className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div className="border-orange-300 border-2 w-max">
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/0/0f/Volume_01.png/revision/latest/scale-to-width-down/180?cb=20230907225315"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />
+              <Link href={"/"}>
+                <h2 className="text-2xl underline underline-offset-2 hover:text-amber-300 transition-colors">Volume 1</h2>
+              </Link>
+              <p className="max-w-40">
+                This is doablbal blaojkf pjfpjapf wfaipj pfjwpa oåjwk gfpo jwpgj
+              </p>
+            </div>
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/6/68/Volume_02.png/revision/latest/scale-to-width-down/180?cb=20230907225636"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2 className="">Volume 2</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/6/68/Volume_02.png/revision/latest/scale-to-width-down/180?cb=20230907225636"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/5/5c/Volume_03.png/revision/latest?cb=20230907225801"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 3</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/5/5c/Volume_03.png/revision/latest?cb=20230907225801"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/e/ef/Volume_04.png/revision/latest?cb=20230907225927"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 4</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/e/ef/Volume_04.png/revision/latest?cb=20230907225927"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/c/cf/Volume_05.png/revision/latest?cb=20230907230442"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 5</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/c/cf/Volume_05.png/revision/latest?cb=20230907230442"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/2/2e/Volume_06.png/revision/latest?cb=20230907230511"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 6</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/2/2e/Volume_06.png/revision/latest?cb=20230907230511"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/3/36/Volume_07.png/revision/latest?cb=20230907230532"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 7</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/3/36/Volume_07.png/revision/latest?cb=20230907230532"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/1/14/Volume_08.png/revision/latest?cb=20230907230549"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 8</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/1/14/Volume_08.png/revision/latest?cb=20230907230549"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/f/f3/Volume_09.png/revision/latest?cb=20230907230647"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 9</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/f/f3/Volume_09.png/revision/latest?cb=20230907230647"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/6/6b/Volume_10.png/revision/latest?cb=20230907230745"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 10</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
 
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/6/6b/Volume_10.png/revision/latest?cb=20230907230745"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
-
-            <Image
-              className="border-3 border-black "
-              src="https://static.wikia.nocookie.net/chainsaw-man/images/1/1b/Volume_11.png/revision/latest?cb=20230907230755"
-              alt="test"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              width={180}
-              height={284}
-              preload={true}
-              loading="eager"
-            />
+            <div>
+              <Image
+                className=" "
+                src="https://static.wikia.nocookie.net/chainsaw-man/images/1/1b/Volume_11.png/revision/latest?cb=20230907230755"
+                alt="test"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                width={180}
+                height={284}
+                preload={true}
+                loading="eager"
+              />{" "}
+              <h2>Volume 11</h2>
+              <p className="max-w-40">
+                Text to fill out the space so that I can tell that the text is
+                being contained as I want it to be.
+              </p>
+            </div>
           </figure>
         </section>
       </article>

@@ -5,6 +5,7 @@ const menu = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
   { title: "Contact us", href: "/contact" },
+  { title: "Favorites", href: "/favorites" },
 ];
 
 // Function - if something returns a jsx element, dont use function.
