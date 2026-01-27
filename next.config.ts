@@ -4,11 +4,8 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname:
-          "boolintunes.com",
-      },
+      { protocol: "https", hostname: "boolintunes.com" },
+      { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
   },
   reactCompiler: true,
