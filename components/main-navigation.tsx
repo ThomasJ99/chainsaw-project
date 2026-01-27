@@ -43,7 +43,7 @@ const RenderMenu = () => {
 export default function MainNavigation() {
   // 1:55h i recording
   return (
-    <nav className="flex justify-between px-6 py-3 text-2xl font-bold sticky top-0 backdrop-blur-xs">
+    <nav className="flex justify-between px-6 py-3 text-2xl font-bold sticky top-0 backdrop-blur-xs border-b">
       <Link href="/" className="hover:opacity-85 transition-opacity">
         <svg
           // className="hover:stroke-amber-950 stroke-emerald-500"

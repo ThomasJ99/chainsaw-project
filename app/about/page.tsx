@@ -4,14 +4,16 @@ export default function About() {
   const title = "About Chainsaw Man";
   return (
     <main className="px-4 py-16">
-      <article className="">
+      <article className="container mx-auto">
         <section>
           <h1 className="text-4xl font-bold mb-6 text-balance font-josefin text-center">
             {title}
           </h1>
 
-          <div className="grid grid-cols-2">
-            <div>
+          <div className="grid grid-cols-3 gap-15">
+            {/* Empty element for grid structure */}
+            <span></span>
+            <div className="">
               <p className="mb-6">
                 Chainsaw Man (Japanese: チェンソーマン, Hepburn: Chensō Man) is
                 a Japanese manga series written and illustrated by Tatsuki
@@ -34,24 +36,26 @@ export default function About() {
               </p>
             </div>
 
-            <figure className="">
-              <Image
-                className="border-3 border-black mb-2"
-                src="https://upload.wikimedia.org/wikipedia/en/2/24/Chainsawman.jpg"
-                alt="test"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                width={252}
-                height={396}
-                preload={true}
-                loading="eager"
-              />
-              
-              <figcaption>
-                <p className="max-w-1/2">
-                  First tankōbon volume cover, featuring Denji in his
-                  Devil-human hybrid form, Chainsaw Man
-                </p>
-              </figcaption>
+            <figure>
+              <div className="pl-10">
+                <Image
+                  className="border-3 border-black mb-2"
+                  src="https://upload.wikimedia.org/wikipedia/en/2/24/Chainsawman.jpg"
+                  alt="test"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  width={252}
+                  height={396}
+                  preload={true}
+                  loading="eager"
+                />
+
+                <figcaption>
+                  <p className="max-w-1/2 inline lg-inline-none">
+                    First tankōbon volume cover, featuring Denji in his
+                    Devil-human hybrid form, Chainsaw Man
+                  </p>
+                </figcaption>
+              </div>
             </figure>
           </div>
         </section>
