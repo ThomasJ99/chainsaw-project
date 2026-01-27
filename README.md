@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chainsaw Man
+A dark, fan-made web experience inspired by the Chainsaw Man manga.
+Built with **Next.js** and **React**, this project focuses on *modern frontend structure* and performance while channeling the series’ brutal aesthetic.
 
-## Getting Started
+## Tech Stack
 
-First, run the development server:
+- Next.js
+- React
+- TypeScript
+- Tailwind
 
+## Running Locally
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open ``http://localhost:3000`` to view it in the browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+The project follows standard Next.js conventions:
 
-To learn more about Next.js, take a look at the following resources:
+- app/ – routes, layouts, and pages
+- components/ – reusable UI components
+- public/ – static assets
+- Configuration files for TypeScript and styling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## About
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This is a non-commercial fan project created for learning and experimentation.
+All characters, names, and related content are the property of their respective owners.
 
-## Deploy on Vercel
+## Disclaimer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Chainsaw Man is created by Tatsuki Fujimoto.
+This project is not affiliated with or endorsed by any official publisher or studio.
