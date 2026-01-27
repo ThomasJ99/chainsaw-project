@@ -7,7 +7,7 @@ const menu = [
   { title: "Contact us", href: "/contact" },
 ];
 
-// Function - if something returns a jsx element, dont use function
+// Function - if something returns a jsx element, dont use function.
 const renderMenu = () => {
   return menu.map((item, index) => (
     <li key={index}>

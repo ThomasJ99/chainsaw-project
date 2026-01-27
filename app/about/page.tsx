@@ -9,6 +9,7 @@ export default function About() {
           <h1 className="text-4xl font-bold mb-6 text-balance font-josefin text-center">
             {title}
           </h1>
+
           <div className="grid grid-cols-2">
             <div>
               <p className="mb-6">
@@ -20,6 +21,7 @@ export default function About() {
                 Jump+ app and website in July 2022. Its chapters have been
                 collected in 22 tankōbon volumes as of September 2025.
               </p>
+
               <p className="mb-12">
                 By December 2025, the manga had over 34 million copies in
                 circulation, making it one of the best-selling manga series of
@@ -31,6 +33,7 @@ export default function About() {
                 violent scenes within the context of the story.
               </p>
             </div>
+
             <figure className="">
               <Image
                 className="border-3 border-black mb-2"
@@ -42,6 +45,7 @@ export default function About() {
                 preload={true}
                 loading="eager"
               />
+              
               <figcaption>
                 <p className="max-w-1/2">
                   First tankōbon volume cover, featuring Denji in his
