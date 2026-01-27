@@ -11,16 +11,15 @@ export default function About() {
           </h1>
           <div className="grid grid-cols-2">
             <div>
-
-            <p className="mb-6">
-              Chainsaw Man (Japanese: チェンソーマン, Hepburn: Chensō Man) is a
-              Japanese manga series written and illustrated by Tatsuki Fujimoto.
-              Its first arc was serialized in Shueisha's shōnen manga magazine
-              Weekly Shōnen Jump from December 2018 to December 2020; its second
-              arc began serialization in Shueisha's Shōnen Jump+ app and website
-              in July 2022. Its chapters have been collected in 22 tankōbon
-              volumes as of September 2025.
-            </p>
+              <p className="mb-6">
+                Chainsaw Man (Japanese: チェンソーマン, Hepburn: Chensō Man) is
+                a Japanese manga series written and illustrated by Tatsuki
+                Fujimoto. Its first arc was serialized in Shueisha's shōnen
+                manga magazine Weekly Shōnen Jump from December 2018 to December
+                2020; its second arc began serialization in Shueisha's Shōnen
+                Jump+ app and website in July 2022. Its chapters have been
+                collected in 22 tankōbon volumes as of September 2025.
+              </p>
               <p className="mb-12">
                 By December 2025, the manga had over 34 million copies in
                 circulation, making it one of the best-selling manga series of
@@ -66,6 +65,131 @@ export default function About() {
             contract with Yoru, the War Devil, who forces her to hunt down
             Chainsaw Man in order to reclaim what he had stolen from her.
           </p>
+        </section>
+
+        <section>
+          <figure className="grid grid-cols-4">
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/0/0f/Volume_01.png/revision/latest/scale-to-width-down/180?cb=20230907225315"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/6/68/Volume_02.png/revision/latest/scale-to-width-down/180?cb=20230907225636"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/5/5c/Volume_03.png/revision/latest?cb=20230907225801"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/e/ef/Volume_04.png/revision/latest?cb=20230907225927"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/c/cf/Volume_05.png/revision/latest?cb=20230907230442"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/2/2e/Volume_06.png/revision/latest?cb=20230907230511"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/3/36/Volume_07.png/revision/latest?cb=20230907230532"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/1/14/Volume_08.png/revision/latest?cb=20230907230549"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/f/f3/Volume_09.png/revision/latest?cb=20230907230647"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/6/6b/Volume_10.png/revision/latest?cb=20230907230745"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+
+            <Image
+              className="border-3 border-black "
+              src="https://static.wikia.nocookie.net/chainsaw-man/images/1/1b/Volume_11.png/revision/latest?cb=20230907230755"
+              alt="test"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={180}
+              height={284}
+              preload={true}
+              loading="eager"
+            />
+          </figure>
         </section>
       </article>
     </main>
