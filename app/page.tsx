@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      <section className="py-16 px-4 bg-linear-to-b from-amber-600 via-amber-500 to-emerald-200">
+      <section className="py-16 px-4 bg-linear-to-b from-orange-600  via-yellow-500 to-lime-300">
         <div className="container mx-auto px-4 grid items-center lg:grid-cols-2 gap-8 font-josefin">
           <div>
             <span className="text-2xl italic font-bold">

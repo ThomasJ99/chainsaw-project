@@ -46,8 +46,6 @@ export default function About() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   width={252}
                   height={396}
-                  preload={true}
-                  loading="eager"
                 />
 
                 <figcaption>
@@ -60,7 +58,6 @@ export default function About() {
             </figure>
           </div>
         </section>
-
         <section>
           <h2 className="text-4xl text-center mb-6">Overview</h2>
           <p className="mb-12">
@@ -75,10 +72,9 @@ export default function About() {
             Chainsaw Man in order to reclaim what he had stolen from her.
           </p>
         </section>
-
         <section>
-          <figure className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            <div className="border-orange-300 border-2 w-max">
+          <figure className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 lg:grid-cols-4  gap-3">
+            <div className="">
               <Image
                 className=" "
                 src="https://static.wikia.nocookie.net/chainsaw-man/images/0/0f/Volume_01.png/revision/latest/scale-to-width-down/180?cb=20230907225315"
@@ -87,10 +83,11 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />
               <Link href={"/"}>
-                <h2 className="text-2xl underline underline-offset-2 hover:text-amber-300 transition-colors">Volume 1</h2>
+                <h2 className="text-2xl mb-4 mt-2 underline underline-offset-2 hover:text-amber-300 transition-colors">
+                  Volume 1
+                </h2>
               </Link>
               <p className="max-w-40">
                 This is doablbal blaojkf pjfpjapf wfaipj pfjwpa oåjwk gfpo jwpgj
@@ -105,7 +102,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2 className="">Volume 2</h2>
               <p className="max-w-40">
@@ -123,7 +119,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 3</h2>
               <p className="max-w-40">
@@ -141,7 +136,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 4</h2>
               <p className="max-w-40">
@@ -159,7 +153,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 5</h2>
               <p className="max-w-40">
@@ -177,7 +170,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 6</h2>
               <p className="max-w-40">
@@ -195,7 +187,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 7</h2>
               <p className="max-w-40">
@@ -213,7 +204,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 8</h2>
               <p className="max-w-40">
@@ -231,7 +221,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 9</h2>
               <p className="max-w-40">
@@ -249,7 +238,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 10</h2>
               <p className="max-w-40">
@@ -267,7 +255,6 @@ export default function About() {
                 width={180}
                 height={284}
                 preload={true}
-                loading="eager"
               />{" "}
               <h2>Volume 11</h2>
               <p className="max-w-40">
