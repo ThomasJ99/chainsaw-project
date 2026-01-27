@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "boolintunes.com" },
       { protocol: "https", hostname: "upload.wikimedia.org" },
       { protocol: "https", hostname: "static.wikia.nocookie.net" },
+      { protocol: "https", hostname: "weebrevues.com" },
     ],
   },
   reactCompiler: true,

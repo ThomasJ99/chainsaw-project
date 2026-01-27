@@ -12,8 +12,8 @@ export default function About() {
           </h1>
 
           <div className="grid grid-cols-3 gap-15">
-            {/* Empty element for grid structure */}
-            <span></span>
+            <span>{/* Empty element for grid structure */}</span>
+
             <div className="">
               <p className="mb-6">
                 Chainsaw Man (Japanese: チェンソーマン, Hepburn: Chensō Man) is
@@ -48,8 +48,8 @@ export default function About() {
                   height={396}
                 />
 
-                <figcaption>
-                  <p className="max-w-1/2 inline lg-inline-none">
+                <figcaption className="max-w-63">
+                  <p className="">
                     First tankōbon volume cover, featuring Denji in his
                     Devil-human hybrid form, Chainsaw Man
                   </p>
@@ -58,8 +58,19 @@ export default function About() {
             </figure>
           </div>
         </section>
-        <section>
-          <h2 className="text-4xl text-center mb-6">Overview</h2>
+
+        <section className="flex justify-center opacity-75 mt-10">
+          <Image
+            className="border-3 mb-12"
+            src="https://weebrevues.com/wp-content/uploads/2020/04/chainsaw-man-banner.png?w=1302"
+            alt="test"
+            width={800}
+            height={400}
+          />
+        </section>
+
+        <section className="max-mx-2">
+          <h2 className="text-4xl text-center mb-6">Overview & Volumes</h2>
           <p className="mb-12">
             Chainsaw Man follows the story of Denji, an impoverished teenager
             who makes a contract that fuses his body with that of Pochita, the
@@ -72,6 +83,7 @@ export default function About() {
             Chainsaw Man in order to reclaim what he had stolen from her.
           </p>
         </section>
+
         <section>
           <figure className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 lg:grid-cols-4  gap-3">
             <div className="">
