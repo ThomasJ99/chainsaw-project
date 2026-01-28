@@ -85,7 +85,7 @@ export default function About() {
         </section>
 
         <section>
-          <figure className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 lg:grid-cols-4  gap-3">
+          <figure className="grid grid-cols-2 grid-rows-3 md:grid-cols-3 lg:grid-cols-4">
             <div className="">
               <Image
                 className=" "

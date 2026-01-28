@@ -1,6 +1,13 @@
 import Image from "next/image";
 
 export default function Home() {
+
+  // const volumes = data.items
+  // const total = data.total
+
+  // Destructuring
+  // 
+
   return (
     <main>
       <section className="py-16 px-4 bg-linear-to-b from-orange-600  via-yellow-500 to-lime-300">
@@ -16,7 +23,7 @@ export default function Home() {
           </div>
 
           <Image
-            className="border-3 border-black "
+            className="border-3 border-black rounded-2xl shadow-2xl"
             src="https://boolintunes.com/wp-content/uploads/2023/01/Chainsaw-Man-Banner-1-1.png"
             alt="test"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
