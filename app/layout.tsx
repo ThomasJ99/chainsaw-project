@@ -8,7 +8,7 @@ import {
   Noto_Sans_JP,
 } from "next/font/google";
 import "./globals.css";
-import MainNavigation from "@/components/main-navigation";
+import MainNavigation from "@/components/navigation/main-navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
