@@ -9,22 +9,20 @@ export default function Home() {
   // Destructuring of const volumes = data.volumes
   const { volumes: volumes } = data;
 
-  /*"w-full" if I want covers to take up more space on Image */
-
   return (
     <main>
       {/* Hero */}
       <header className="py-16 px-4 bg-linear-to-b from-orange-600  via-yellow-500 to-lime-300">
         <section className="container mx-auto px-4 grid items-center lg:grid-cols-2 gap-8 font-oswald drop-shadow-2xl">
           <div>
-            <span className="text-2xl italic font-bold">
+            <span className="opacity-95 text-2xl italic font-bold">
               Immerse yourself in the world of
             </span>
-            <h1 className="text-6xl xl:text-7xl font-bold leading-tight text-balance tracking-wide grid col-auto ">
+            <h1 className="text-6xl xl:text-7xl font-bold leading-tight text-balance tracking-wide grid col-auto uppercase">
               Chainsaw Man{" "}
               <span className="font-noto-sans-jp">チェンソーマン</span>
             </h1>
-            <p className="opacity-85 text-2xl">
+            <p className="opacity-90 text-2xl">
               By Tatsuki Fujimoto{" "}
               <span className="font-noto-sans-jp">藤本 タツキ</span>
             </p>

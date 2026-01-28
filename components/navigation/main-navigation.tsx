@@ -49,7 +49,7 @@ export default function MainNavigation() {
         <svg
           // className="hover:stroke-amber-950 stroke-emerald-500"
           id="svg1"
-          width="175"
+          width="225"
           height="35"
           version="1.1"
           viewBox="0 0 1132 125.64"
@@ -76,7 +76,7 @@ export default function MainNavigation() {
         {menu.map((item, index) => (
           <li key={index}>
             <Link
-              className="text-white hover:text-amber-300 transition-colors px-2 font-oswald"
+              className="text-white hover:text-amber-300 transition-colors px-2 font-oswald uppercase"
               href={item.href}
             >
               {item.title}
