@@ -12,7 +12,7 @@ import Image from "next/image";
 export default function CardGrid({ volumes }: { volumes: Volume[] }) {
   return (
     <section className="container mx-auto">
-      <h2>Manga Volumes</h2>
+      <h2 className="text-5xl py-12 text-center">Manga Volumes</h2>
       <ul className="grid grid-cols-[repeat(auto-fill,minmax(35ch,1fr))] gap-8">
         {volumes.map((volume) => (
           <li
@@ -20,7 +20,7 @@ export default function CardGrid({ volumes }: { volumes: Volume[] }) {
             className={`${volume.isLatest ? "border-2 border-red-600" : ""}`}
           >
             <Image
-              className="w-full"
+              className="w-full hover:origin-[110%]"
               src={volume.image}
               width={180}
               height={284}

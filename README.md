@@ -29,10 +29,16 @@ The project follows standard Next.js conventions:
 
 ## About
 
-This is a non-commercial fan project created for learning and experimentation.
+This is a non-commercial fan project created for learning and experimentation while studying.
 All characters, names, and related content are the property of their respective owners.
 
 ## Disclaimer
 
-Chainsaw Man is created by Tatsuki Fujimoto.
-This project is not affiliated with or endorsed by any official publisher or studio.
+This is a personal, non-commercial educational project.
+Chainsaw Man images are used for illustrative purposes only.
+All characters and artwork © Tatsuki Fujimoto / Shueisha.
+
+Portions of this content are adapted from “Chainsaw Man” on Wikipedia, used under the Creative Commons Attribution-ShareAlike 4.0 License.
+Source: https://en.wikipedia.org/wiki/Chainsaw_Man
+
+License: https://creativecommons.org/licenses/by-sa/4.0/
