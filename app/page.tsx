@@ -1,5 +1,6 @@
 import Image from "next/image";
 import data from "@/data/volumes.json";
+import CardGrid from "@/components/ui/card-grid";
 
 export default function Home() {
   // const volumes = data.volumes;
@@ -7,6 +8,8 @@ export default function Home() {
 
   // Destructuring of const volumes = data.volumes
   const { volumes: volumes } = data;
+
+  /*"w-full" if I want covers to take up more space on Image */
 
   return (
     <main>
@@ -40,13 +43,14 @@ export default function Home() {
         </section>
       </header>
 
-      <section className="container mx-auto">
+      {/* This line of code replaces the other code that commented out below, it imports a component */}
+      <CardGrid volumes={volumes} />
+      {/* <section className="container mx-auto">
         <h2>Manga Volumes</h2>
         <ul className="grid grid-cols-[repeat(auto-fill,minmax(35ch,1fr))]">
           {volumes.map((volume) => (
             <li key={volume.id}>
               <Image
-                /*"w-full" if I want covers to take up more space */
                 className=""
                 src={volume.image}
                 width={180}
@@ -57,7 +61,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
     </main>
   );
 }
