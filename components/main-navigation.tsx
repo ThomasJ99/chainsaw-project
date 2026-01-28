@@ -76,7 +76,7 @@ export default function MainNavigation() {
         {menu.map((item, index) => (
           <li key={index}>
             <Link
-              className="text-white  hover:text-amber-300 transition-colors px-2"
+              className="text-white hover:text-amber-300 transition-colors px-2 font-oswald"
               href={item.href}
             >
               {item.title}

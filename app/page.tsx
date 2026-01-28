@@ -11,16 +11,20 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="py-16 px-4 bg-linear-to-b from-orange-600  via-yellow-500 to-lime-300">
-        <div className="container mx-auto px-4 grid items-center lg:grid-cols-2 gap-8 font-josefin">
+      <header className="py-16 px-4 bg-linear-to-b from-orange-600  via-yellow-500 to-lime-300">
+        <section className="container mx-auto px-4 grid items-center lg:grid-cols-2 gap-8 font-oswald drop-shadow-2xl">
           <div>
             <span className="text-2xl italic font-bold">
               Immerse yourself in the world of
             </span>
-            <h1 className="text-5xl font-bold leading-tight text-balance grid col-auto">
-              Chainsaw Man <span>チェンソーマン</span>
+            <h1 className="text-6xl xl:text-7xl font-bold leading-tight text-balance tracking-wide grid col-auto ">
+              Chainsaw Man{" "}
+              <span className="font-noto-sans-jp">チェンソーマン</span>
             </h1>
-            <p className="opacity-85">By Tatsuki Fujimoto 藤本 タツキ</p>
+            <p className="opacity-85 text-2xl">
+              By Tatsuki Fujimoto{" "}
+              <span className="font-noto-sans-jp">藤本 タツキ</span>
+            </p>
           </div>
 
           <Image
@@ -33,8 +37,8 @@ export default function Home() {
             preload={true}
             loading="eager"
           />
-        </div>
-      </section>
+        </section>
+      </header>
 
       <section className="container mx-auto">
         <h2>Manga Volumes</h2>
@@ -47,7 +51,7 @@ export default function Home() {
                 src={volume.image}
                 width={180}
                 height={284}
-                alt={volume.volume}
+                alt={`${volume.volume} of the manga series Chainsaw Man, written by Tatsuki Fujimoto`}
               />
               <h3>{volume.volume}</h3>
             </li>
