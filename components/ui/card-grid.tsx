@@ -1,5 +1,6 @@
 import { Volume } from "@/types/chainsaw";
 import Image from "next/image";
+import Link from "next/link";
 
 // With props
 // export default function CardGrid(props: { volumes: Volume[] }) {
@@ -11,6 +12,8 @@ import Image from "next/image";
 // This function does what the above function does and the const {volumes} = props line does, but in 1 line instead
 export default function CardGrid({ volumes }: { volumes: Volume[] }) {
   return (
+    // 1h+ föreläsning
+
     <section className="container mx-auto">
       <h2 className="text-5xl py-12 text-center">Manga Volumes</h2>
       <ul className="grid grid-cols-[repeat(auto-fill,minmax(35ch,1fr))] gap-8">
@@ -19,13 +22,15 @@ export default function CardGrid({ volumes }: { volumes: Volume[] }) {
             key={volume.id}
             className={`${volume.isLatest ? "border-2 border-red-600" : ""}`}
           >
-            <Image
-              className="w-full scale-95 hover:scale-100 transition"
-              src={volume.image}
-              width={180}
-              height={284}
-              alt={`${volume.volume} of the manga series Chainsaw Man, written by Tatsuki Fujimoto`}
-            />
+            <Link href={`/volume/${volume.id}`}>
+              <Image
+                className="w-full scale-95 hover:scale-100 transition"
+                src={volume.image}
+                width={180}
+                height={284}
+                alt={`${volume.volume} of the manga series Chainsaw Man, written by Tatsuki Fujimoto`}
+              />
+            </Link>
             <div className="font-inter mx-4 flex flex-col h-full">
               <h3 className="text-2xl underline underline-offset-2 hover:text-amber-300 transition-colors">
                 {volume.volume}
