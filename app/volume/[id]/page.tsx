@@ -10,5 +10,12 @@ export default async function VolumePage({
   const volume = data.volumes.find((volume) => volume.id === Number(id));
 
   if (!volume) notFound();
-  return <div>{volume?.volume}</div>;
+  return (
+    <main>
+      {/* {volume?.volume} */}
+      <article>
+
+      </article>      
+    </main>
+  );
 }

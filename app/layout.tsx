@@ -9,6 +9,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import MainNavigation from "@/components/navigation/main-navigation";
+import Footer from "@/components/navigation/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,12 +53,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // These additions persist on all pages, currently main navigation at the top and footer at the bottom
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${josefinSans.variable} ${oswald.variable} ${inter.variable} ${notoSansJP.variable} antialiased`}
       >
         <MainNavigation />
         {children}
+        <Footer />
       </body>
     </html>
   );
