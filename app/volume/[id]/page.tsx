@@ -11,11 +11,9 @@ export default async function VolumePage({
 
   if (!volume) notFound();
   return (
-    <main>
-      {/* {volume?.volume} */}
-      <article>
-
-      </article>      
+    <main className={""}>
+      {volume?.volume}
+      <article></article>
     </main>
   );
 }

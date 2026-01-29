@@ -58,9 +58,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${josefinSans.variable} ${oswald.variable} ${inter.variable} ${notoSansJP.variable} antialiased`}
       >
-        <MainNavigation />
-        {children}
-        <Footer />
+        <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
+          <MainNavigation />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
