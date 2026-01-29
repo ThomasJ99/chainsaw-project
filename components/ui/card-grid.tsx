@@ -12,8 +12,8 @@ import Link from "next/link";
 // This function does what the above function does and the const {volumes} = props line does, but in 1 line instead
 export default function CardGrid({ volumes }: { volumes: Volume[] }) {
   return (
-    <section className="container mx-auto">
-      <h2 className="text-5xl py-12 text-center">Manga Volumes</h2>
+    <section role="region" aria-labelledby="" className="container mx-auto">
+      <h2 className="text-5xl py-12 text-center" id="Manga-volumes">Manga Volumes</h2>
       <ul className="grid grid-cols-[repeat(auto-fill,minmax(35ch,1fr))] gap-8">
         {volumes.map((volume) => (
           <li
@@ -26,7 +26,8 @@ export default function CardGrid({ volumes }: { volumes: Volume[] }) {
                 src={volume.image}
                 width={180}
                 height={284}
-                alt={`${volume.volume} of the manga series Chainsaw Man, written by Tatsuki Fujimoto`}
+                alt=""
+                // alt={`Manga cover for ${volume.volume} of the manga series Chainsaw Man, written by Tatsuki Fujimoto`}
               />
             </Link>
             <div className="font-inter mx-4 flex flex-col">
