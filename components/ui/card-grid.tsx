@@ -12,8 +12,6 @@ import Link from "next/link";
 // This function does what the above function does and the const {volumes} = props line does, but in 1 line instead
 export default function CardGrid({ volumes }: { volumes: Volume[] }) {
   return (
-    // 1h+ föreläsning
-
     <section className="container mx-auto">
       <h2 className="text-5xl py-12 text-center">Manga Volumes</h2>
       <ul className="grid grid-cols-[repeat(auto-fill,minmax(35ch,1fr))] gap-8">
