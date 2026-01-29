@@ -2,19 +2,27 @@ import data from "@/data/volumes.json";
 import CardGrid from "@/components/ui/card-grid";
 import Hero from "@/components/ui/hero";
 
-export default function Home() { // Search params typ 1h30 i föreläsningen
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | undefined }>;
+}) {
+  const {limit} = await (searchParams);
+
+  const volumes = data.volumes.slice(0,Number(limit))
+
   // const volumes = data.volumes;
   // const total = data.total
 
   // Destructuring of const volumes = data.volumes
-  const { volumes: v } = data;
+  const { volumes: volume } = data;
 
   return (
     <main>
-      <Hero/>
+      <Hero />
 
       {/* Creates a grid of cards, it imports a component using a function */}
-      <CardGrid volumes={v} />
+      <CardGrid volumes={volume} />
     </main>
   );
 }
