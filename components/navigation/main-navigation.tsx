@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { title } from "process";
 
 const menu = [
   { title: "Home", href: "/" },
@@ -9,42 +8,42 @@ const menu = [
 ];
 
 // Function - if something returns a jsx element, dont use function.
-const renderMenu = () => {
-  return menu.map((item, index) => (
-    <li key={index}>
-      <Link
-        className="text-amber-500 hover:bg-emerald-200 p-2"
-        href={item.href}
-      >
-        {item.title}
-      </Link>
-    </li>
-  ));
-};
+// const renderMenu = () => {
+//   return menu.map((item, index) => (
+//     <li key={index}>
+//       <Link
+//         className="text-amber-500 hover:bg-emerald-200 p-2"
+//         href={item.href}
+//       >
+//         {item.title}
+//       </Link>
+//     </li>
+//   ));
+// };
 
-// Component - Good choice but shouldnt be used for short code snippets, makes it harder to follow in the long run
-// You run the code with the <RenderMenu/> tag
-const RenderMenu = () => {
-  return (
-    <>
-      {menu.map((item, index) => (
-        <li key={index}>
-          <Link
-            className="text-white  hover:text-amber-500 transition-colors p-2"
-            href={item.href}
-          >
-            {item.title}
-          </Link>
-        </li>
-      ))}
-    </>
-  );
-};
+// // Component - Good choice but shouldnt be used for short code snippets, makes it harder to follow in the long run
+// // You run the code with the <RenderMenu/> tag
+// const RenderMenu = () => {
+//   return (
+//     <>
+//       {menu.map((item, index) => (
+//         <li key={index}>
+//           <Link
+//             className="text-white  hover:text-amber-500 transition-colors p-2"
+//             href={item.href}
+//           >
+//             {item.title}
+//           </Link>
+//         </li>
+//       ))}
+//     </>
+//   );
+// };
 
 export default function MainNavigation() {
   // 1:55h i recording
   return (
-    <nav className="flex justify-between px-6 py-3 text-2xl font-bold sticky top-0 backdrop-blur-xs border-b">
+    <nav className="flex justify-between px-6 py-3 text-2xl font-bold sticky top-0 bg-black border-b">
       <Link href="/" className="hover:opacity-85 transition-opacity">
         <svg
           // className="hover:stroke-amber-950 stroke-emerald-500"

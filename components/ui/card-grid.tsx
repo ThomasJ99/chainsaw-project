@@ -20,19 +20,19 @@ export default function CardGrid({ volumes }: { volumes: Volume[] }) {
             className={`${volume.isLatest ? "border-2 border-red-600" : ""}`}
           >
             <Image
-              className="w-full hover:origin-[110%]"
+              className="w-full scale-95 hover:scale-100 transition"
               src={volume.image}
               width={180}
               height={284}
               alt={`${volume.volume} of the manga series Chainsaw Man, written by Tatsuki Fujimoto`}
             />
-            <div className="font-inter">
-              <h3 className="text-2xl mb-4 mt-2 underline underline-offset-2 hover:text-amber-300 transition-colors">
+            <div className="font-inter mx-4 flex flex-col h-full">
+              <h3 className="text-2xl underline underline-offset-2 hover:text-amber-300 transition-colors">
                 {volume.volume}
               </h3>
               <span>{volume.arc}</span>
               <p className="leading-relaxed">{volume.description}</p>
-              <span className="block text-right text-sm text-white/70 font-light ">
+              <span className="mt-auto block text-right text-sm text-white/70 font-light">
                 {volume.releaseDate}
               </span>
             </div>
