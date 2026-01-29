@@ -10,11 +10,15 @@ export default function Hero() {
           </span>
           <h1 className="text-6xl xl:text-7xl font-bold leading-tight text-balance tracking-wide grid col-auto uppercase">
             Chainsaw Man{" "}
-            <span className="font-noto-sans-jp">チェンソーマン</span>
+            <span lang="ja" className="font-noto-sans-jp">
+              チェンソーマン
+            </span>
           </h1>
           <p className="text-white/90 text-2xl">
             By Tatsuki Fujimoto{" "}
-            <span className="font-noto-sans-jp">藤本 タツキ</span>
+            <span lang="ja" className="font-noto-sans-jp">
+              藤本 タツキ
+            </span>
           </p>
         </div>
 

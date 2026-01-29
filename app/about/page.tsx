@@ -16,13 +16,13 @@ export default function About() {
 
             <div className="">
               <p className="mb-6">
-                Chainsaw Man (Japanese: チェンソーマン, Hepburn: Chensō Man) is
-                a Japanese manga series written and illustrated by Tatsuki
-                Fujimoto. Its first arc was serialized in Shueisha's shōnen
-                manga magazine Weekly Shōnen Jump from December 2018 to December
-                2020; its second arc began serialization in Shueisha's Shōnen
-                Jump+ app and website in July 2022. Its chapters have been
-                collected in 22 tankōbon volumes as of September 2025.
+                Chainsaw Man (Japanese: <span lang="ja" className="font-noto-sans-jp">チェンソーマン</span>, Hepburn:
+                Chensō Man) is a Japanese manga series written and illustrated
+                by Tatsuki Fujimoto. Its first arc was serialized in Shueisha's
+                shōnen manga magazine Weekly Shōnen Jump from December 2018 to
+                December 2020; its second arc began serialization in Shueisha's
+                Shōnen Jump+ app and website in July 2022. Its chapters have
+                been collected in 22 tankōbon volumes as of September 2025.
               </p>
 
               <p className="mb-12">
@@ -72,19 +72,19 @@ export default function About() {
         <section className="max-mx-2 grid grid-cols-3 gap-15">
           <span></span>
           <div>
-          <h2 className="text-4xl text-center mb-6">Overview</h2>
-          <p className="mb-12">
-            Chainsaw Man follows the story of Denji, an impoverished teenager
-            who makes a contract that fuses his body with that of Pochita, the
-            dog-like Chainsaw Devil, granting him the ability to transform parts
-            of his body into chainsaws. Denji eventually joins the Public Safety
-            Devil Hunters, a government agency focused on combating Devils
-            whenever they become a threat to Japan. The second arc of the story
-            focuses on Asa Mitaka, a high school student who enters into a
-            contract with Yoru, the War Devil, who forces her to hunt down
-            Chainsaw Man in order to reclaim what he had stolen from her.
-          </p>
-
+            <h2 className="text-4xl text-center mb-6">Overview</h2>
+            <p className="mb-12">
+              Chainsaw Man follows the story of Denji, an impoverished teenager
+              who makes a contract that fuses his body with that of Pochita, the
+              dog-like Chainsaw Devil, granting him the ability to transform
+              parts of his body into chainsaws. Denji eventually joins the
+              Public Safety Devil Hunters, a government agency focused on
+              combating Devils whenever they become a threat to Japan. The
+              second arc of the story focuses on Asa Mitaka, a high school
+              student who enters into a contract with Yoru, the War Devil, who
+              forces her to hunt down Chainsaw Man in order to reclaim what he
+              had stolen from her.
+            </p>
           </div>
         </section>
       </article>
