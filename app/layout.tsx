@@ -1,30 +1,8 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Josefin_Sans,
-  Oswald,
-  Inter,
-  Noto_Sans_JP,
-} from "next/font/google";
+import { Oswald, Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import MainNavigation from "@/components/navigation/main-navigation";
 import Footer from "@/components/navigation/footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const josefinSans = Josefin_Sans({
-  variable: "--font-josefin-sans",
-  subsets: ["latin"],
-});
 
 const oswald = Oswald({
   variable: "--font-oswald",
@@ -56,7 +34,7 @@ export default function RootLayout({
     // These additions persist on all pages, currently main navigation at the top and footer at the bottom
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${josefinSans.variable} ${oswald.variable} ${inter.variable} ${notoSansJP.variable} antialiased`}
+        className={`${oswald.variable} ${inter.variable} ${notoSansJP.variable} antialiased`}
       >
         <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
           <MainNavigation />
