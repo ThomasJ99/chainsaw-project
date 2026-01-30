@@ -11,7 +11,7 @@ export default function About() {
             {title}
           </h1>
 
-          <div className="grid grid-cols-3 gap-15">
+          <section className="grid grid-cols-3 gap-15">
             <span>{/* Empty element for grid structure */}</span>
 
             <div className="">
@@ -56,10 +56,10 @@ export default function About() {
                 </figcaption>
               </div>
             </figure>
-          </div>
+          </section>
         </section>
 
-        <section className="flex justify-center opacity-75 mt-10">
+        <div className="flex justify-center opacity-75 mt-10">
           <Image
             className="border-3 mb-12"
             src="https://weebrevues.com/wp-content/uploads/2020/04/chainsaw-man-banner.png?w=1302"
@@ -67,7 +67,7 @@ export default function About() {
             width={800}
             height={400}
           />
-        </section>
+        </div>
 
         <section className="max-mx-2 grid grid-cols-3 gap-15">
           <span></span>

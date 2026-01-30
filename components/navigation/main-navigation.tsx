@@ -1,10 +1,11 @@
 import Link from "next/link";
 
+// Array of objects
 const menu = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
-  { title: "Contact us", href: "/contact" },
-  { title: "Favorites", href: "/favorites" },
+  // { title: "Contact us", href: "/contact" },
+  // { title: "Favorites", href: "/favorites" },
 ];
 
 // Function - if something returns a jsx element, dont use function.
@@ -70,6 +71,7 @@ export default function MainNavigation() {
           </g>
         </svg>
       </Link>
+      
       <ul className="flex gap-4">
         {menu.map((item, index) => (
           <li key={index}>

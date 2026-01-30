@@ -17,12 +17,14 @@ export default function Footer() {
             <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
+
             <Link
-              href="/volumes"
+              href="/#Manga-volumes"
               className="hover:text-white transition-colors"
             >
               Volumes
             </Link>
+
             <Link href="/about" className="hover:text-white transition-colors">
               About
             </Link>
