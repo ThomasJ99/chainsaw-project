@@ -1,4 +1,4 @@
-export interface Products {
+export interface Product {
   id: number;
   title: string;
   slug: string;
@@ -10,5 +10,5 @@ export interface Products {
     image: string;
     slug: string;
   };
-  images: [string, string, string];
+  images: [string];
 }
