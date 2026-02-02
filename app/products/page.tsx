@@ -1,65 +1,31 @@
 import { Product } from "@/types/products";
 
 // This is where we get the product information
-// export default function CardGrid({ volumes }: { volumes: Volume[] })
-async function getProducts() {
+async function getProducts(): Promise<Product[]> {
   try {
     const response = await fetch("https://api.escuelajs.co/api/v1/products");
 
     if (!response.ok) {
       throw new Error("Error, could'nt find products");
     }
-    const data = await response.json();
-
-    const responseData = data.map((p) => {
-      return {
-        id: p.id,
-        title: p.title,
-        slug: p.slug,
-        price: p.price,
-        description: p.description,
-        category: {
-          id: p.id,
-          name: p.name,
-          image: p.image,
-          slug: p.slug,
-        },
-        images: [p.image],
-      };
-    });
-
-    console.log("WDAWFD", responseData);
-    return responseData;
-
-  } catch (error) {}
+    return await response.json();
+  } catch (error) {
+    throw new Error("Error, could'nt find products");
+  }
 }
 
 // Component
 // This is where we call getProducts and render out the products
-
 export default async function productPage() {
-  const data: Product[] = await getProducts();
+  const data = await getProducts();
 
-  const elements = data.map(
-    (p: {
-      id: number;
-      title: string;
-      slug: string;
-      price: number;
-      description: string;
-      category: {
-        id: number;
-        name: string;
-        image: string;
-        slug: string;
-      };
-      images: [string];
-    }) => (
-      <li key={p.id}>
-        <h3>{p.title}</h3>
-      </li>
-    ),
-  );
+  // I create elements here to make my return section more clean
+  const elements = data.map((p) => (
+    <li key={p.id}>
+      <h3>{p.title}</h3>
+      <h4>{p.category.id}</h4>
+    </li>
+  ));
 
   return (
     <section>
