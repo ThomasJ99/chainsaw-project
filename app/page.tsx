@@ -1,5 +1,5 @@
 import data from "@/data/volumes.json";
-import CardGrid from "@/components/ui/card-grid";
+import CardGrid from "@/components/ui/volume-grid";
 import Hero from "@/components/ui/hero";
 
 export default async function Home({
@@ -7,9 +7,9 @@ export default async function Home({
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  const {limit} = await (searchParams);
+  const { limit } = await searchParams;
 
-  const volumes = data.volumes.slice(0,Number(limit))
+  const volumes = data.volumes.slice(0, Number(limit));
 
   // const volumes = data.volumes;
   // const total = data.total
