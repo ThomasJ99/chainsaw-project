@@ -14,6 +14,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "placehold.co" },
       { protocol: "https", hostname: "placeimg.com" },
       { protocol: "https", hostname: "api.escuelajs.co" },
+      { protocol: "https", hostname: "picsum.photos" },
     ],
   },
   reactCompiler: true,

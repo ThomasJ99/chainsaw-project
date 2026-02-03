@@ -1,7 +1,5 @@
 import { Product } from "@/types/products";
 import CardGrid from "@/components/ui/card-grid";
-// WTH IS THIS
-import { title } from "process";
 import Image from "next/image";
 import { Suspense } from "react";
 import { getProduct } from "@/data/product";
@@ -33,32 +31,33 @@ async function getProducts() {
 
 // Component
 // This is where we call getProducts and render out the products
-export default async function productPage() {
+export default async function productPage(params: PageProps<"/">) {
+  const { limit = "12" } = await params.searchParams;
+  const limitNumber = Number(Array.isArray(limit) ? limit[0] : limit);
+
   const data = (await getProducts()) as Product[];
-  // const cleanUrl = p.images[0].replace(/[\[\]\"]/g, "");
+  // console.log(data[1].images[0]);
 
   // I create elements here to make my return section more clean
   const elements = data.map((p) => (
-    <li key={p.id} className="border-2">
-      <h3>{p.title}</h3>
-      <h4>{p.category.name}</h4>
-      <p>{p.price}kr</p>
-      {/* Help */}
+    <li key={p.id} className="border-2 grid grid-cols-2">
+      {p.images[0] && (
+        <img src={p.images[0]} alt="" className="w-full h-full object-cover" />
+      )}
+
+      <section className="p-5">
+        <h3 className="text-2xl">{p.title}</h3>
+        <h4 className="opacity-80">{p.category.name}</h4>
+        <p>{p.price}kr</p>
+        <p>{p.description}</p>
+      </section>
 
       {/* <Image
-        src={p.images[1]}
-        height={100}
-        width={100}
-        alt="Image of a product"
-      /> */}
-
-      {/* <img src={p.images} alt="" className="w-full" /> */}
-      <Image
         src={p.category.image}
         height={50}
         width={50}
         alt="Image of a product category"
-      />
+      /> */}
     </li>
   ));
 
@@ -67,7 +66,7 @@ export default async function productPage() {
       <ul className="">
         {/* Shows the fallback if the grid and api take a lot of time to load - can show skeleton ui here */}
         <Suspense fallback={<div>loading...</div>}>
-          <CardGrid title={title} children={elements} />
+          <CardGrid children={elements} />
         </Suspense>
       </ul>
     </section>

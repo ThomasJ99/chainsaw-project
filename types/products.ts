@@ -10,5 +10,5 @@ export interface Product {
     image: string;
     slug: string;
   };
-  images: [string];
+  images: string[];
 }
