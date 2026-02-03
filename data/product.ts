@@ -17,8 +17,8 @@ export async function getProduct(): Promise<Product[] | { message: string }> {
 
   return (await response.json()) as Product[];
 
-  const data = (await response.json()) as Product[];
-  return data;
+//   const data = (await response.json()) as Product[];
+//   return data;
 }
 
 // export async function getProduct() {
