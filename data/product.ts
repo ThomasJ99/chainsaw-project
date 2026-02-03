@@ -1,9 +1,8 @@
 import { Product } from "@/types/products";
 
-export async function getProduct() {
-    // Depending on how we want to use this file we can tweak what has access to it
-  //auth
-  //if (!admin) return null
+export async function getProduct(): Promise<Product[] | { message: string }> {
+  // Depending on how we want to use this file we could tweak what/who has access to it by returning null
+
   // Gets our api
   const response = await fetch("https://api.escuelajs.co/api/v1/products", {
     // Caches files and redoes it every 1 hour
@@ -11,11 +10,32 @@ export async function getProduct() {
   });
 
   // Fail check
-  if (!response.ok) return {message: "There was an error"}
-    
-  
-  // return await response.json();
-  const data = (await response.json()) as Product[];
+  if (!response.ok)
+    return {
+      message: "There was an error",
+    };
 
+  return (await response.json()) as Product[];
+
+  const data = (await response.json()) as Product[];
   return data;
 }
+
+// export async function getProduct() {
+//   // Depending on how we want to use this file we can tweak what has access to it
+//   //auth
+//   //if (!admin) return null
+//   // Gets our api
+//   const response = await fetch("https://api.escuelajs.co/api/v1/products", {
+//     // Caches files and redoes it every 1 hour
+//     next: { revalidate: 3600 },
+//   });
+
+//   // Fail check
+//   if (!response.ok) return { message: "There was an error" };
+
+//   // return await response.json();
+//   const data = (await response.json()) as Product[];
+
+//   return data;
+// }
