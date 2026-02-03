@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "pravatar.cc" },
       { protocol: "https", hostname: "placehold.co" },
       { protocol: "https", hostname: "placeimg.com" },
+      { protocol: "https", hostname: "api.escuelajs.co" },
     ],
   },
   reactCompiler: true,

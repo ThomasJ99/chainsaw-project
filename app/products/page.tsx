@@ -3,11 +3,15 @@ import CardGrid from "@/components/ui/card-grid";
 // WTH IS THIS
 import { title } from "process";
 import Image from "next/image";
+import { Suspense } from "react";
 
 // This is where we get the product information
 async function getProducts(): Promise<Product[]> {
   try {
-    const response = await fetch("https://api.escuelajs.co/api/v1/products");
+    const response = await fetch("https://api.escuelajs.co/api/v1/products", {
+      // Caches files and redoes it every 1 hour
+      next: { revalidate: 3600 },
+    });
 
     if (!response.ok) {
       throw new Error("Error, could'nt find products");
@@ -27,7 +31,6 @@ export default async function productPage() {
   // I create elements here to make my return section more clean
   const elements = data.map((p) => (
     <li key={p.id} className="border-2">
-      
       <h3>{p.title}</h3>
       <h4>{p.category.name}</h4>
       <p>{p.price}kr</p>
@@ -39,6 +42,8 @@ export default async function productPage() {
         width={100}
         alt="Image of a product"
       /> */}
+
+      {/* <img src={p.images} alt="" className="w-full" /> */}
       <Image
         src={p.category.image}
         height={50}
@@ -52,7 +57,9 @@ export default async function productPage() {
     <section className="">
       <ul className="">
         {/* HELP */}
+        <Suspense fallback={<div>loading...</div>}>
         <CardGrid title={title} children={elements} />
+        </Suspense>
       </ul>
     </section>
   );
