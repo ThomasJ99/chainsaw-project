@@ -1,9 +1,11 @@
 import { Product } from "@/types/products";
 
+const URL_API = "https://api.escuelajs.co/api/v1/";
+
 // This is where we get the product information
 export async function getProducts(): Promise<Product[]> {
   try {
-    const data = await fetch(`https://api.escuelajs.co/api/v1/products`);
+    const data = await fetch(`${URL_API}products`);
 
     return await data.json();
 
@@ -21,13 +23,10 @@ export async function getProduct(id: number): Promise<Product> {
   // Depending on how we want to use this file we could tweak what/who has access to it by returning null
 
   // Gets our api
-  const response = await fetch(
-    `https://api.escuelajs.co/api/v1/products/${id}`,
-    {
-      // Caches files and redoes it every 1 hour
-      // next: { revalidate: 3600 },
-    },
-  );
+  const response = await fetch(`${URL_API}products/${id}`, {
+    // Caches files and redoes it every 1 hour
+    // next: { revalidate: 3600 },
+  });
 
   return await response.json();
 
