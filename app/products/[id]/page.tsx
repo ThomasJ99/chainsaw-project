@@ -1,10 +1,12 @@
 import data from "@/data/volumes.json";
-import { notFound } from "next/navigation";
+
 import Image from "next/image";
 import { getProduct } from "@/data/product";
 import { Metadata } from "next";
+import notFound from "./not-found";
 // From https://nextjs.org/docs/app/api-reference/file-conventions/page#reading-searchparams-and-params-in-client-components
 
+// Puts a title on the webpage, which features the products title
 export async function generateMetadata({
   params,
 }: {
@@ -13,17 +15,17 @@ export async function generateMetadata({
   // read route params
   const { id } = await params;
   const idNumber = Number(id);
-  
 
   // fetch data
   const product = await getProduct(idNumber);
 
   return {
-    title: `Product - ${product.title}`
+    title: `Product - ${product.title}`,
   };
 }
 
-export default async function VolumePage({
+// Content for the product
+export default async function ProductPage({
   params,
 }: {
   params: Promise<{ id: string }>;
@@ -34,7 +36,7 @@ export default async function VolumePage({
   //   const volume = data.volumes.find((volume) => volume.id === Number(id));
   const product = await getProduct(idNumber);
 
-  // If theres no volume, call the notFound function and return
+  // If theres no product, call the notFound function and return
   if (!product) notFound();
   //else return below..
   return (
