@@ -71,7 +71,7 @@ export default function MainNavigation() {
           </g>
         </svg>
       </Link>
-      
+
       <ul className="flex gap-4">
         {menu.map((item, index) => (
           <li key={index}>

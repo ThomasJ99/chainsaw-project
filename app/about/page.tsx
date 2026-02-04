@@ -1,5 +1,11 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Chainsaw - About",
+  description: "Find out about Chainsaw Man",
+};
 
 export default function About() {
   const title = "About Chainsaw Man";
