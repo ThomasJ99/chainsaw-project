@@ -1,22 +1,26 @@
 import Link from "next/link";
 import { Product } from "@/types/products";
+import LikeButton from "./LikeButton";
 
 interface ProductCardProps {
   p: Product;
 }
 
-export default function ProductCard({p}: ProductCardProps) {
+export default function ProductCard({ p }: ProductCardProps) {
   return (
     <li key={p.id} className="border-2 grid grid-cols-2">
-      {p.images[0] && (
-        <img
-          src={p.images[0]}
-          alt=""
-          className="w-full h-full object-cover"
-          height={200}
-          width={200}
-        />
-      )}
+      <div>
+        {p.images[0] && (
+          <img
+            src={p.images[0]}
+            alt=""
+            className="w-full h-full object-cover"
+            height={200}
+            width={200}
+          />
+        )}
+      </div>
+        <LikeButton pTitle={p.title} />
 
       <Link href={`/products/${p.id}`}>
         <section className="p-5">
