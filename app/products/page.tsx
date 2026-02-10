@@ -6,7 +6,7 @@ import { getProduct, getProducts } from "@/data/product";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import ProductCard from "@/components/ui/ProductCard";
-
+import LoadingSpinner from "@/components/ui/loading-spinner";
 
 // Component
 // This is where we call getProducts and render out the products
@@ -16,7 +16,7 @@ export default async function productPage(params: PageProps<"/">) {
   // Things to do with limit, implement links/buttons that change the limit on the site -
   // -
 
-  const products = await getProducts()
+  const products = await getProducts();
   // console.log(data[1].images[0]);
 
   // I create elements here to make my return section more clean
@@ -43,14 +43,14 @@ export default async function productPage(params: PageProps<"/">) {
     //     alt="Image of a product category"
     //   /> */}
     // </li>
-    <ProductCard key={p.title} p={p}/>
+    <ProductCard key={p.title} p={p} />
   ));
 
   return (
     <section className="">
       <ul className="">
         {/* Shows the fallback if the grid and api take a lot of time to load - can show skeleton ui here */}
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense fallback={<LoadingSpinner/>}>
           <CardGrid children={elements} />
         </Suspense>
       </ul>
