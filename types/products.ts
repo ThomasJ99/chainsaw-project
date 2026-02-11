@@ -4,11 +4,15 @@ export interface Product {
   slug: string;
   price: number;
   description: string;
-  category: {
-    id: number;
-    name: string;
-    image: string;
-    slug: string;
-  };
+  category: Category
   images: string[];
+}
+
+export interface Category {
+  id: number;
+  name: string;
+  slug: string;
+  image: string;
+  creationAt: string;
+  updatedAt: string;
 }
