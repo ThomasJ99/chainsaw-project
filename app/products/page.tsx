@@ -22,10 +22,11 @@ export default async function productPage(params: PageProps<"/">) {
   return (
     <section>
       <section className="container mx-auto">
-        <LimitSelect />
+        <h1 className="text-4xl mt-15 mb-5 px-4 font-oswald">Our sortiment</h1>
         <Suspense fallback={<LoadingSpinner />}>
           <CategoryLinks />
         </Suspense>
+        <LimitSelect />
         <div className="container mx-auto text-center grid">
           <span>Navigate to next page of products</span>
           <div className="grid">

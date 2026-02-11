@@ -39,12 +39,11 @@ export default function LikeButton({ pTitle }: LikeButtonProps) {
   return (
     <button
       onClick={toggleLike}
-      className={`absolute top-3 right-0 z-10 w-10 h-10 flex  items-center justify-center bg-white
-       `}
+      className={`absolute top-3 right-0 z-10 w-10 h-10 flex items-center justify-center bg-white cursor-pointer`}
       type="button"
     >
       <svg
-        className={`w-7 h-7 text-black fill-red-50 transition-colors ${hasLiked ? "fill-red-500 " : ""}`}
+        className={`w-7 h-7 text-black fill-red-50 transition-all duration-200 ease-in-out  ${hasLiked ? "fill-red-500 scale-110" : "fill-red-50 scale-100"}`}
         fill="currentColor"
         stroke="currentColor"
         strokeWidth="2"
@@ -54,6 +53,6 @@ export default function LikeButton({ pTitle }: LikeButtonProps) {
       </svg>
     </button>
     /* { {hasLiked ? "Liked " : "Like "}
-      {likes > 0 && <span>{}</span>} }*/
+      {likes > 0 && <span>{likes}</span>} }*/
   );
 }

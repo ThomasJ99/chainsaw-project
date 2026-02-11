@@ -6,7 +6,7 @@ export default async function CategoryLinks() {
   const categories: Category[] = await getCategories();
 
   return (
-    <section className="flex gap-4 px-4">
+    <section className="flex flex-wrap gap-2 px-4">
       {categories.map((c) => (
         <CategoryLink key={c.id} category={c} />
       ))}
