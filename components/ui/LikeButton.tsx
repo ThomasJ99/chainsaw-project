@@ -33,18 +33,27 @@ export default function LikeButton({ pTitle }: LikeButtonProps) {
     });
     const data = await response.json();
     setLikes(data.likes);
-    setHasLiked(!hasLiked);    
+    setHasLiked(!hasLiked);
   };
 
   return (
     <button
       onClick={toggleLike}
-      className={`p-10 bg-orange-400
-    ${hasLiked ? "bg-orange-500 text-white" : "hover:bg-orange-600"}`}
+      className={`absolute top-3 right-0 z-10 w-10 h-10 flex  items-center justify-center bg-white
+       `}
       type="button"
     >
-      {hasLiked ? "Liked " : "Like "}
-      {likes > 0 && <span>{likes}</span>}
+      <svg
+        className={`w-7 h-7 text-black fill-red-50 transition-colors ${hasLiked ? "fill-red-500 " : ""}`}
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth="2"
+        viewBox="0 0 24 24"
+      >
+        <path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z" />
+      </svg>
     </button>
+    /* { {hasLiked ? "Liked " : "Like "}
+      {likes > 0 && <span>{}</span>} }*/
   );
 }
