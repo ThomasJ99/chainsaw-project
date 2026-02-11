@@ -8,6 +8,7 @@ export interface Product {
   images: string[];
 }
 
+// Sub-interface
 export interface Category {
   id: number;
   name: string;

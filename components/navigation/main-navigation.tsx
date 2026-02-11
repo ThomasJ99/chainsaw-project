@@ -4,6 +4,7 @@ import Link from "next/link";
 const menu = [
   { title: "Home", href: "/" },
   { title: "About", href: "/about" },
+  { title: "Products", href: "/products" },
   // { title: "Contact us", href: "/contact" },
   // { title: "Favorites", href: "/favorites" },
 ];

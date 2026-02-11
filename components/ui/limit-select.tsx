@@ -12,7 +12,7 @@ export default function LimitSelect() {
   // Allows us to change the server value, meaning we can manipulate the URL
   const router = useRouter();
   // Gets the current url limit
-  const currentLimit = searchParams.get("limit")
+  const currentLimit = searchParams.get("limit");
 
   // This function handles our change when we use the dropdown and select a new "value"
   // Choose a select element here because we use it in our select tag
@@ -27,9 +27,12 @@ export default function LimitSelect() {
   };
 
   return (
-    <form className="flex gap-6 px-8">
-      <label htmlFor="limit-select">Limit:</label>
+    <form className=" flex gap-6 px-8 text-2xl">
+      <label className="" htmlFor="limit-select">
+        Limit:
+      </label>
       <select
+        className=""
         name="limit"
         id="limit-select"
         onChange={handleChange}
@@ -37,7 +40,11 @@ export default function LimitSelect() {
         defaultValue={currentLimit ?? 4}
       >
         {ITEMLIMITS.map((item) => (
-          <option key={`limit-select${item}`} value={item}>
+          <option
+            key={`limit-select${item}`}
+            value={item}
+            className="bg-black text-base"
+          >
             {item}
           </option>
         ))}

@@ -6,6 +6,7 @@ import LoadingSpinner from "@/components/ui/loading-spinner";
 import CategoryLinks from "@/components/ui/category-links";
 import { ensureString } from "@/util";
 import LimitSelect from "@/components/ui/limit-select";
+import Link from "next/link";
 
 // Component
 // This is where we call getProducts and render out the products
@@ -19,17 +20,30 @@ export default async function productPage(params: PageProps<"/">) {
   const products = await getProducts(limitNumber, offsetNumber, categoryString);
 
   return (
-    <section className="">
-        <LimitSelect/>
-      <Suspense fallback={<LoadingSpinner />}>
-        <CategoryLinks />
-      </Suspense>
+    <section>
+      <section className="container mx-auto">
+        <LimitSelect />
+        <Suspense fallback={<LoadingSpinner />}>
+          <CategoryLinks />
+        </Suspense>
+        <div className="container mx-auto text-center grid">
+          <span>Navigate to next page of products</span>
+          <div className="grid">
+            <Link href={"products?offset=4"}>Next page +4</Link>
+            <Link href={"products?offset=8"}>Next page +8</Link>
+            <Link href={"products?offset=12"}>Next page +12</Link>
+            <Link href={"products?offset=16"}>Next page +16</Link>
+          </div>
+        </div>
+      </section>
       <ul className="">
         {/* Shows the fallback if the grid and api take a lot of time to load - can
         show skeleton ui here TODO: Implement our getProducts() into CardGrid
         and put suspense around it */}
+
         {/* Dont do this  */}
         {/* <CardGrid children={elements} /> */}
+
         <CardGrid>
           {products.map((p) => (
             <ProductCard key={p.title} product={p} />
