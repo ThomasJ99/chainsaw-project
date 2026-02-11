@@ -4,7 +4,7 @@ const URL_API = "https://api.escuelajs.co/api/v1/";
 
 // This is where we get the product information
 export async function getProducts(
-  limit = 8,
+  limit = 4,
   offset = 0,
   category?: string,
 ): Promise<Product[]> {
@@ -55,45 +55,3 @@ export async function getCategories() {
     // redirect("/uykkp99uy")
   }
 }
-
-// // This file fetches data from a API and then exports that data or a error message
-// export async function getProduct(): Promise<Product[] | { message: string }> {
-//   // Depending on how we want to use this file we could tweak what/who has access to it by returning null
-
-//   // Gets our api
-//   const response = await fetch("https://api.escuelajs.co/api/v1/products", {
-//     // Caches files and redoes it every 1 hour
-//     next: { revalidate: 3600 },
-//   });
-
-//   // Fail check
-//   if (!response.ok)
-//     return {
-//       message: "There was an error",
-//     };
-
-//   return (await response.json()) as Product[];
-// }
-
-// Another way to write the line above
-//   const data = (await response.json()) as Product[];
-//   return data;
-
-// export async function getProduct() {
-//   // Depending on how we want to use this file we can tweak what has access to it
-//   //auth
-//   //if (!admin) return null
-//   // Gets our api
-//   const response = await fetch("https://api.escuelajs.co/api/v1/products", {
-//     // Caches files and redoes it every 1 hour
-//     next: { revalidate: 3600 },
-//   });
-
-//   // Fail check
-//   if (!response.ok) return { message: "There was an error" };
-
-//   // return await response.json();
-//   const data = (await response.json()) as Product[];
-
-//   return data;
-// }

@@ -5,6 +5,7 @@ import ProductCard from "@/components/ui/product-card";
 import LoadingSpinner from "@/components/ui/loading-spinner";
 import CategoryLinks from "@/components/ui/category-links";
 import { ensureString } from "@/util";
+import LimitSelect from "@/components/ui/limit-select";
 
 // Component
 // This is where we call getProducts and render out the products
@@ -19,6 +20,7 @@ export default async function productPage(params: PageProps<"/">) {
 
   return (
     <section className="">
+        <LimitSelect/>
       <Suspense fallback={<LoadingSpinner />}>
         <CategoryLinks />
       </Suspense>
