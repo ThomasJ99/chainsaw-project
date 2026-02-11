@@ -1,27 +1,15 @@
 import Link from "next/link";
-import { Product } from "@/types/products";
+import { ProductCardProps } from "@/types/products";
 import LikeButton from "./LikeButton";
+import ImageScroll from "./image-scroll";
 
-interface ProductCardProps {
-  product: Product;
-}
 // My product info content thats inside a generic card-grid
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <li key={product.id} className="">
       <div className="relative">
-        {product.images[0] && (
-          <img
-            src={product.images[0]}
-            alt="temp image"
-            // Anchor
-            className="w-full h-120 object-cover"
-            height={400}
-            width={200}
-          />
-        )}
+        <ImageScroll product={product} />
         <LikeButton pTitle={product.title} />
-        <button>Swap image</button>
       </div>
 
       <Link href={`/products/${product.id}`}>
