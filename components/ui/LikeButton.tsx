@@ -43,7 +43,7 @@ export default function LikeButton({ pTitle }: LikeButtonProps) {
       type="button"
     >
       <svg
-        className={`w-7 h-7 text-black fill-red-50 transition-all duration-200 ease-in-out  ${hasLiked ? "fill-red-500 scale-110" : "fill-red-50 scale-100"}`}
+        className={`w-7 h-7 text-black fill-red-50 transition-all duration-200 ease-in  ${hasLiked ? "fill-red-500 scale-110" : "fill-red-50 scale-100"}`}
         fill="currentColor"
         stroke="currentColor"
         strokeWidth="2"

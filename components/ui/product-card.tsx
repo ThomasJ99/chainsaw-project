@@ -7,7 +7,7 @@ import ImageScroll from "./image-scroll";
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <li key={product.id} className="">
-      <div className="relative">
+      <div className="relative group">
         <ImageScroll product={product} />
         <LikeButton pTitle={product.title} />
       </div>
@@ -15,8 +15,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       <Link href={`/products/${product.id}`}>
         <section className="pt-3 pb-5 font-semibold text-center">
           <h2 className="font-bold font-oswald">{product.title}</h2>
-          <span className="block">{product.category.name}</span>
-          <span className="">{product.price} kr</span>
+          <span className="block mb-2">{product.category.name}</span>
+          <span>{product.price} kr</span>
         </section>
       </Link>
     </li>

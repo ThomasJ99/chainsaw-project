@@ -23,24 +23,27 @@ export default async function productPage(params: PageProps<"/">) {
     <section>
       <section className="container mx-auto">
         <h1 className="text-4xl mt-15 mb-5 px-4 font-oswald">Our sortiment</h1>
+
         <Suspense fallback={<LoadingSpinner />}>
           <CategoryLinks />
         </Suspense>
+
         <LimitSelect />
         <div className="container mx-auto text-center grid">
-          <span>Navigate to next page of products</span>
+          <span>Navigate to next page of products <span className="opacity-50">to be implemented</span></span>
           <div className="grid">
-            <Link href={"products?offset=4"}>Next page +4</Link>
+            {/* <Link href={"products?offset=4"}>Next page +4</Link>
             <Link href={"products?offset=8"}>Next page +8</Link>
             <Link href={"products?offset=12"}>Next page +12</Link>
-            <Link href={"products?offset=16"}>Next page +16</Link>
+            <Link href={"products?offset=16"}>Next page +16</Link> */}
           </div>
         </div>
       </section>
-      <ul className="">
-        {/* Shows the fallback if the grid and api take a lot of time to load - can
-        show skeleton ui here TODO: Implement our getProducts() into CardGrid
-        and put suspense around it */}
+
+      <ul>
+        {/* Show the fallback if the grid and api take a lot of time to load - can
+        show skeleton ui here 
+        TODO: Implement our getProducts() into CardGrid and put suspense around it */}
 
         {/* Dont do this  */}
         {/* <CardGrid children={elements} /> */}
