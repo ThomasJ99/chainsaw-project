@@ -38,8 +38,14 @@ export default function LikeButton({ pTitle }: LikeButtonProps) {
 
   return (
     <button
-      onClick={toggleLike}
-      className={`absolute top-3 right-0 z-10 w-10 h-10 flex items-center justify-center bg-white cursor-pointer`}
+      onClick={(e) => {
+        (e.preventDefault(),
+          // https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation
+          // Stops the bubbling
+          e.stopPropagation(),
+          toggleLike());
+      }}
+      className={`z-999 absolute top-3 right-0 w-10 h-10 flex items-center justify-center bg-white cursor-pointer`}
       type="button"
     >
       <svg
@@ -52,7 +58,7 @@ export default function LikeButton({ pTitle }: LikeButtonProps) {
         <path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 10-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z" />
       </svg>
     </button>
-    /* { {hasLiked ? "Liked " : "Like "}
-      {likes > 0 && <span>{likes}</span>} }*/
+    /* {hasLiked ? "Liked " : "Like "}
+      {likes > 0 && <span>{}</span>}  */
   );
 }

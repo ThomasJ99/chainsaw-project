@@ -18,6 +18,7 @@ export interface Category {
   updatedAt: string;
 }
 
+// Declare props(product) as a Product type
 export interface ProductCardProps {
   product: Product;
 }

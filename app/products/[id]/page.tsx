@@ -78,7 +78,7 @@ export default async function ProductPage({
             {/* TODO: FIX TOP BUTTON TO ALSO BE GROW*/}
             <div className="">
               <button className="mt-10 p-3 text-white/60 text-left flex border-2 cursor-pointer hover:scale-101 active:border-white ">
-                Choose your size
+                Choose your size/model/type
               </button>
 
               <div className="flex gap-1 mb-15">
@@ -103,8 +103,9 @@ export default async function ProductPage({
             <section className="grid border-2">
               <p className="border-b-2 p-5">
                 Sold and shipped by{" "}
-                <span className="font-bold underline hover:text-gray-400 cursor-pointer">The Cool Company</span>
-              
+                <span className="font-bold underline hover:text-gray-400 cursor-pointer">
+                  The Cool Company
+                </span>
               </p>
 
               <div className="border-b-2 p-5">

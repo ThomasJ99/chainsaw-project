@@ -1,12 +1,11 @@
 "use client";
 
 import { ProductCardProps } from "@/types/products";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function ImageScroll({ product }: ProductCardProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // product now contains our currentIndex
-  product.images[currentIndex];
 
   // We handle currentIndex here and swap it depending
   const indexSwap = () => {
@@ -17,35 +16,41 @@ export default function ImageScroll({ product }: ProductCardProps) {
     );
   };
 
-  // Failcheck
-  if (!product.images?.length) return null;
+  // If no image
+  if (!product.images || product.images.length === 0) {
+    return <div className="bg-gray-100"></div>;
+  }
 
   return (
     <div>
-      <img
+      <Image
         src={product.images[currentIndex]}
         alt={`A product called ${product.title}`}
         className="w-full h-120 object-cover"
         height={400}
         width={200}
       />
-
-      <button
-        type="button"
-        onClick={indexSwap}
-        className="absolute top-50 right-0 bg-white/90 hover:bg-gray-300 active:bg-gray-200
-          text-black text-3xl cursor-pointer px-2.5 py-1 
-          group invisible group-hover:visible transition-all duration-200 ease-in"
-      >
-        {">"}
-      </button>
+      {/* Doesent render button if theres less than 1 image */}
+      {product.images.length > 1 ? (
+        <button
+          type="button"
+          onClick={(e) => {
+            (e.preventDefault(), e.stopPropagation(), indexSwap());
+          }}
+          className={
+            "absolute top-50 right-0 bg-white/90 hover:bg-gray-300 active:bg-gray-200 text-black text-3xl cursor-pointer px-2.5 py-1 group invisible group-hover:visible transition-all duration-200 ease-in"
+          }
+        >
+          {">"}
+        </button>
+      ) : null}
     </div>
   );
 }
 
 // Code for a slideshow - replace current img
-{
-  /* <div className="relative overflow-hidden">
+
+/* <div className="relative overflow-hidden">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{
@@ -61,4 +66,3 @@ export default function ImageScroll({ product }: ProductCardProps) {
           />
         ))}
       </div> */
-}
