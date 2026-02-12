@@ -1,7 +1,6 @@
 "use client";
 
 import { ProductCardProps } from "@/types/products";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function ImageScroll({ product }: ProductCardProps) {
@@ -23,7 +22,7 @@ export default function ImageScroll({ product }: ProductCardProps) {
 
   return (
     <div>
-      <Image
+      <img
         src={product.images[currentIndex]}
         alt={`A product called ${product.title}`}
         className="w-full h-120 object-cover"
@@ -37,9 +36,10 @@ export default function ImageScroll({ product }: ProductCardProps) {
           onClick={(e) => {
             (e.preventDefault(), e.stopPropagation(), indexSwap());
           }}
-          className={
-            "absolute top-50 right-0 bg-white/90 hover:bg-gray-300 active:bg-gray-200 text-black text-3xl cursor-pointer px-2.5 py-1 group invisible group-hover:visible transition-all duration-200 ease-in"
-          }
+          className={`
+            absolute top-50 right-0 bg-white/90
+           hover:bg-gray-300 active:bg-gray-200 text-black text-3xl cursor-pointer 
+            px-2.5 py-1 group invisible group-hover:visible transition-all duration-200 ease-in`}
         >
           {">"}
         </button>

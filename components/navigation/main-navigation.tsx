@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SearchForm from "../ui/search";
 
 // Array of objects
 const menu = [
@@ -72,6 +73,8 @@ export default function MainNavigation() {
           </g>
         </svg>
       </Link>
+
+      <SearchForm />
 
       <ul className="flex gap-4">
         {menu.map((item, index) => (

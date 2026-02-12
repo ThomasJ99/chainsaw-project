@@ -1,23 +1,34 @@
 import CardGrid from "@/components/ui/card-grid";
 import { Suspense } from "react";
-import { getProducts } from "@/data/product";
+import { getProducts2 } from "@/data/product";
 import ProductCard from "@/components/ui/product-card";
 import LoadingSpinner from "@/components/ui/loading-spinner";
 import CategoryLinks from "@/components/ui/category-links";
 import { ensureString } from "@/util";
 import LimitSelect from "@/components/ui/limit-select";
-import Link from "next/link";
 
 // Component
 // This is where we call getProducts and render out the products
 export default async function productPage(params: PageProps<"/">) {
-  const { limit = "8", offset = "0", category } = await params.searchParams;
+  const {
+    limit = "4",
+    offset = "0",
+    category,
+    title,
+  } = await params.searchParams;
   const limitNumber = Number(ensureString(limit));
   const offsetNumber = Number(ensureString(offset));
   const categoryString = ensureString(category);
+  const titleString = ensureString(title);
+
   // Things to do with limit, implement links/buttons that change the limit on the site
 
-  const products = await getProducts(limitNumber, offsetNumber, categoryString);
+  const products = await getProducts2(
+    limitNumber,
+    offsetNumber,
+    categoryString,
+    titleString,
+  );
 
   return (
     <section>
@@ -30,7 +41,10 @@ export default async function productPage(params: PageProps<"/">) {
 
         <LimitSelect />
         <div className="container mx-auto text-center grid">
-          <span>Navigate to next page of products <span className="opacity-50">to be implemented</span></span>
+          <span>
+            Navigate to next page of products{" "}
+            <span className="opacity-50">to be implemented</span>
+          </span>
           <div className="grid">
             {/* <Link href={"products?offset=4"}>Next page +4</Link>
             <Link href={"products?offset=8"}>Next page +8</Link>

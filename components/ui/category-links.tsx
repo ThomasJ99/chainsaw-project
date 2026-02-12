@@ -7,7 +7,7 @@ export default async function CategoryLinks() {
 
   return (
     <section className="flex flex-wrap gap-2 px-4">
-      {categories.map((c) => (
+      {categories.slice(0, 8).map((c) => (
         <CategoryLink key={c.id} category={c} />
       ))}
     </section>

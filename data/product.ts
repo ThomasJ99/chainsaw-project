@@ -7,11 +7,13 @@ export async function getProducts(
   limit = 4,
   offset = 0,
   category?: string,
+  title?: string,
 ): Promise<Product[]> {
+  const fetchURL = `${URL_API}products?limit=${limit}&offset=${offset}${category ? `&categorySlug=${category}` : ""}${title ? `&title=${title}` : ""}`;
   try {
-    const data = await fetch(
-      `${URL_API}products?limit=${limit}&offset=${offset}${category ? `&categorySlug=${category}` : ""}`,
-    );
+    const data = await fetch(fetchURL);
+
+    console.log("hello ppl", fetchURL);
 
     return await data.json();
 
@@ -21,6 +23,34 @@ export async function getProducts(
     throw new Error("Api not working...");
     // ("Api not working...");
     // redirect("/uykkp99uy")
+  }
+}
+
+export async function getProducts2(
+  limit = 4,
+  offset = 0,
+  category?: string,
+  title?: string,
+): Promise<Product[]> {
+  const params = new URLSearchParams({
+    limit: limit.toString(),
+    offset: offset.toString(),
+  });
+
+  if (category) {
+    params.set("categorySlug", category);
+  }
+
+  if (title) {
+    params.set("title", title);
+  }
+
+  try {
+    const response = await fetch(`${URL_API}products/?${params}`);
+
+    return await response.json();
+  } catch {
+    throw new Error("API is down...");
   }
 }
 
