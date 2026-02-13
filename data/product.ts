@@ -33,6 +33,8 @@ export async function getProducts2(
   offset = 0,
   category?: string,
   title?: string,
+  price_min?: number,
+  price_max?: number,
 ): Promise<Product[]> {
   // Initialize query parameters with required pagination values, limit/offset
   const params = new URLSearchParams({
@@ -49,6 +51,14 @@ export async function getProducts2(
 
   if (title) {
     params.set("title", title);
+  }
+
+  if (price_min) {
+    params.set("price_min", price_min.toString());
+  }
+
+  if (price_max) {
+    params.set("price_max", price_max.toString());
   }
 
   try {
