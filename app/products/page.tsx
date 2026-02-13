@@ -15,11 +15,14 @@ export default async function productPage(params: PageProps<"/">) {
     offset = "0",
     category,
     title,
+    minPrice,
+    maxPrice,
   } = await params.searchParams;
   const limitNumber = Number(ensureString(limit));
   const offsetNumber = Number(ensureString(offset));
   const categoryString = ensureString(category);
   const titleString = ensureString(title);
+  const minPriceNumber = Number(ensureString(minPrice));
 
   // Things to do with limit, implement links/buttons that change the limit on the site
 
