@@ -4,6 +4,7 @@ import { ProductCardProps } from "@/types/products";
 import { useState } from "react";
 
 export default function ImageScroll({ product }: ProductCardProps) {
+  // State with our current state and a function that updates the state
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // We handle currentIndex here and swap it depending
@@ -15,7 +16,8 @@ export default function ImageScroll({ product }: ProductCardProps) {
     );
   };
 
-  // If no image
+  // Check whether the product has any images
+  // No? Return a empty div as a placeholder
   if (!product.images || product.images.length === 0) {
     return <div className="bg-gray-100"></div>;
   }
@@ -31,6 +33,8 @@ export default function ImageScroll({ product }: ProductCardProps) {
       />
       {/* Doesent render button if theres less than 1 image */}
       {product.images.length > 1 ? (
+        // Handles index swap action for the images
+        // Uses preventDefault and stopPropagation to ensure the click does not bubble and trigger parent Link element
         <button
           type="button"
           onClick={(e) => {
@@ -48,7 +52,7 @@ export default function ImageScroll({ product }: ProductCardProps) {
   );
 }
 
-// Code for a slideshow - replace current img
+// Code for a slideshow - replace current img - probably not gonna use this one
 
 /* <div className="relative overflow-hidden">
       <div

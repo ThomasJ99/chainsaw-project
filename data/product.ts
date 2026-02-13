@@ -26,16 +26,22 @@ export async function getProducts(
   }
 }
 
+// New version of product fetch that uses URLSearchParams instead of manually building a long query string
+// This makes the query(title) easier to read, maintain, and extend
 export async function getProducts2(
   limit = 4,
   offset = 0,
   category?: string,
   title?: string,
 ): Promise<Product[]> {
+  // Initialize query parameters with required pagination values, limit/offset
   const params = new URLSearchParams({
     limit: limit.toString(),
     offset: offset.toString(),
   });
+
+  // Append category/title filter only if provided
+  // Can easily add other optional filters like price/price range here
 
   if (category) {
     params.set("categorySlug", category);
@@ -46,8 +52,10 @@ export async function getProducts2(
   }
 
   try {
+    // Gets the URL using the constructed query params(URLSearchParams)
     const response = await fetch(`${URL_API}products/?${params}`);
 
+    // Parse and return the JSON response
     return await response.json();
   } catch {
     throw new Error("API is down...");
@@ -58,7 +66,7 @@ export async function getProducts2(
 export async function getProduct(id: number): Promise<Product> {
   // Depending on how we want to use this file we could tweak what/who has access to it by returning null
 
-  // Gets our api
+  // Gets our api of a single product
   const response = await fetch(`${URL_API}products/${id}`, {
     // Caches files and redoes it every 1 hour
     // next: { revalidate: 3600 },

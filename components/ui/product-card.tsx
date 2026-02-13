@@ -8,10 +8,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <li key={product.id} className="">
       <Link className="z-1" href={`/products/${product.id}`}>
-      <div className="relative group">
-      <ImageScroll product={product} />
-      <LikeButton pTitle={product.title} />
-      </div>
+        <div className="relative group">
+          <ImageScroll product={product} />
+          <LikeButton pTitle={product.title} />
+        </div>
 
         <section className="pt-3 pb-5 font-semibold text-center">
           <h2 className="font-bold font-oswald">{product.title}</h2>

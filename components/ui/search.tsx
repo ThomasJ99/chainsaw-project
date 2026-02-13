@@ -35,6 +35,8 @@ export default function SearchForm() {
         placeholder="Search..."
         defaultValue={title || ""}
       />
+      {/* Solution is to save hidden values of limit/offset/categories here, feels like a scuffed solution though */}
+      {/* <input type="hidden" name="sort" value={} /> */}
 
       {title && (
         <button type="button" onClick={handleClear}>

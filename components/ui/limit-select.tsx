@@ -29,8 +29,9 @@ export default function LimitSelect() {
   return (
     <form className=" flex gap-6 px-8 text-2xl ">
       <label className="my-5 font-oswald" htmlFor="limit-select">
-        Limit:
+        Show Products:
       </label>
+      
       <select
         className=""
         name="limit"
