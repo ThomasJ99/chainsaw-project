@@ -7,6 +7,7 @@ import CategoryLinks from "@/components/ui/category-links";
 import { ensureString } from "@/util";
 import LimitSelect from "@/components/ui/limit-select";
 import PriceSlider from "@/components/ui/price-slider";
+import PriceSliderDual from "@/components/ui/price-slider-dual";
 
 // Component
 // This is where we call getProducts and render out the products
@@ -45,8 +46,11 @@ export default async function productPage(params: PageProps<"/">) {
           <CategoryLinks />
         </Suspense>
 
+        <PriceSliderDual keyName="hello" />
         <LimitSelect />
-        <PriceSlider/>
+        <PriceSlider keyName="price_min" />
+        <PriceSlider keyName="price_max" />
+
         <div className="container mx-auto text-center grid">
           <span>
             Navigate to next page of products{" "}
