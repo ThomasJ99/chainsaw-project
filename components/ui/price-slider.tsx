@@ -10,10 +10,10 @@ import { useDebouncedCallback } from "use-debounce";
 // My slider should then have some hook for interactivity and update the url params on submit button
 // Perhaps ill have two sliders which each determine min/max with a input field which shows the current value for each slider
 
-export default function PriceSlider() {
+export default function PriceSlider({ keyName }: { keyName: string }) {
   // States with a current value and a function which updates it
-  const [min, setMin] = useState(0);
-  const [max, setMax] = useState(0);
+  const [val, setVal] = useState(0);
+  console.log(keyName);
 
   // Reads the searchParams - URL
   const searchParams = useSearchParams();
@@ -24,35 +24,51 @@ export default function PriceSlider() {
   // Allows us to change the server value, meaning we can manipulate the URL
   const router = useRouter();
 
-  const minURL = Number(searchParams.get("price_min") || 0);
-  const maxURL = Number(searchParams.get("price_max") || 100000);
+  const priceChange = useDebouncedCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      // TODO: Implement logic here...
+      const newVal = event.target.value;
 
-  const priceChange = useDebouncedCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value);
-    const newMin = event.target.value;
+      // Clones my current URL so i dont lose it later later on if I have categories selected already
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(keyName, newVal);
+      setVal(Number(newVal));
 
-    // TODO: Implement logic here...
-    // Clones my current URL so i dont lose it later later on if I have categories selected already
-    const params = new URLSearchParams(searchParams.toString());
-    params.set("price_min", newMin);
-    setMin(Number(newMin));
-
-    router.push(`${pathName}?${params.toString()}`);
-  },300);
+      // Updates URL
+      router.push(`${pathName}?${params.toString()}`);
+    },
+    200,
+  );
 
   return (
     <div>
-      <span className="border-2 p- mx-2">{min}</span>
-      <label htmlFor="slider">Price Slider</label>
-      <input
-        onChange={priceChange}
-        type="range"
-        id="slider"
-        name="price_min"
-        min={0}
-        max={100000}
-        step={100}
-      />
+      <span className="border-2 p- mx-2">{val}</span>
+      <label htmlFor="slider">${keyName}</label>
+      <div>
+        <input
+          onChange={priceChange}
+          type="range"
+          id="slider"
+          list="markers"
+          name={keyName}
+          className="w-full"
+          min={0}
+          max={100000}
+          step={100}
+        />
+
+        <datalist id="markers" className="flex justify-between w-full">
+          <option value="0" label="0" className=" text-center"></option>
+          <option
+            value="25000"
+            label="25000"
+            className="ms-8 text-center"
+          ></option>
+          <option value="50000" label="50000"></option>
+          <option value="75000" label="75000"></option>
+          <option value="100000" label="100000"></option>
+        </datalist>
+      </div>
       {/* TODO: JSX LOGIC HERE...  */}
     </div>
   );
