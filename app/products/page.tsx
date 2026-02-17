@@ -6,6 +6,7 @@ import LoadingSpinner from "@/components/ui/loading-spinner";
 import CategoryLinks from "@/components/ui/category-links";
 import { ensureString } from "@/util";
 import LimitSelect from "@/components/ui/limit-select";
+import PriceSlider from "@/components/ui/price-slider";
 
 // Component
 // This is where we call getProducts and render out the products
@@ -45,6 +46,7 @@ export default async function productPage(params: PageProps<"/">) {
         </Suspense>
 
         <LimitSelect />
+        <PriceSlider/>
         <div className="container mx-auto text-center grid">
           <span>
             Navigate to next page of products{" "}

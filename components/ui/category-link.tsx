@@ -19,7 +19,7 @@ export default function CategoryLink({ category }: { category: Category }) {
 
   return (
     <Link
-      className={`border-2 px-4 py-3 font-bold  hover:bg-amber-300 hover:border-white
+      className={`border-2 px-4 py-3 font-bold  hover:bg-amber-300  hover:border-white
          hover:text-black transition-colors font-oswald uppercase my-
          ${isActive ? "underline scale-105 bg-amber-300 text-black border-white" : ""}`}
       key={category.id}
