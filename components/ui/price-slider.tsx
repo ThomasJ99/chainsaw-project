@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { useDebouncedCallback } from "use-debounce";
 
 // -- What is my sliders role before I start implementing it? -- //
 
@@ -26,7 +27,7 @@ export default function PriceSlider() {
   const minURL = Number(searchParams.get("price_min") || 0);
   const maxURL = Number(searchParams.get("price_max") || 100000);
 
-  const priceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const priceChange = useDebouncedCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     console.log(event.target.value);
     const newMin = event.target.value;
 
@@ -37,7 +38,7 @@ export default function PriceSlider() {
     setMin(Number(newMin));
 
     router.push(`${pathName}?${params.toString()}`);
-  };
+  },300);
 
   return (
     <div>
