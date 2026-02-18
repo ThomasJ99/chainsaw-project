@@ -44,13 +44,15 @@ export default function PriceSliderDual({ keyName }: { keyName: string }) {
 
   return (
     <div className="my-5">
+      <label htmlFor="DualSlider">Min/Max Price</label>
       <Slider
-        id="slider-demo-temperature"
+        id="DualSlider"
         value={value}
         onValueChange={setValue}
+        onChange={priceChange}
         min={0}
-        max={1}
-        step={0.1}
+        max={100000}
+        step={100}
       />
       {/* <span className="border-2 p- mx-2">{val}</span>
       <label htmlFor="slider">Price Slider</label>

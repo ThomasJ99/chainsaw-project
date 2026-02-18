@@ -46,7 +46,6 @@ export default async function productPage(params: PageProps<"/">) {
           <CategoryLinks />
         </Suspense>
 
-        <PriceSliderDual keyName="hello" />
         <LimitSelect />
         <PriceSlider keyName="price_min" />
         <PriceSlider keyName="price_max" />
