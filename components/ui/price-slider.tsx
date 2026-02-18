@@ -42,8 +42,11 @@ export default function PriceSlider({ keyName }: { keyName: string }) {
 
   return (
     <section>
-      <span className="border-2 p- mx-2">{val}</span>
-      <label htmlFor="slider">{keyName}</label>
+      <div className="flex justify-between px-2">
+        <span className="border-2 p-2 mx-2">{val}</span>
+        <label htmlFor="slider" className="py-2">{keyName}</label>
+      </div>
+
       <div>
         <input
           onChange={priceChange}
@@ -58,14 +61,10 @@ export default function PriceSlider({ keyName }: { keyName: string }) {
         />
 
         <datalist id="markers" className="flex justify-between w-full">
-          <option value="0" label="0" className=" text-center"></option>
-          <option
-            value="25000"
-            label="25000"
-            className="ms-8 text-center"
-          ></option>
-          <option value="50000" label="50000"></option>
-          <option value="75000" label="75000"></option>
+          <option value="0" label="0" className=" "></option>
+          <option value="25000" label="25000" className="ms-10"></option>
+          <option value="50000" label="50000" className="ms-6"></option>
+          <option value="75000" label="75000" className="ms-4"></option>
           <option value="100000" label="100000"></option>
         </datalist>
       </div>
