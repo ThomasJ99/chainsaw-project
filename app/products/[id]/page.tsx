@@ -42,6 +42,7 @@ export default async function ProductPage({
   return (
     <main className="container mx-auto">
       <article className="grid md:grid-cols-2 gap-20">
+        {/* TODO: FIX GRID/FLEX OR SMTH ON IMAGES SO THEY WORK CORRECTLY WHILE SCALING THE WINDOW DOWN */}
         <figure className="">
           <img
             className="w-full h-200 object-cover pb-4"

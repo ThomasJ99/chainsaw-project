@@ -10,10 +10,13 @@ export default function ImageScroll({ product }: ProductCardProps) {
   // We handle currentIndex here and swap it depending
   const indexSwap = () => {
     // Updates our state
-    setCurrentIndex((prevIndex) =>
-      // Checks if we are on the last image, if true 0, false - index + 1 to
-      prevIndex === product.images.length - 1 ? 0 : prevIndex + 1,
+    setCurrentIndex(
+      (prevIndex) =>
+        // Checks if we are on the last image, if true 0, false - index + 1 to
+        //prevIndex === product.images.length - 1 ? 0 : prevIndex + 1,
+        (prevIndex = (prevIndex + 1) % product.images.length), //Modulo operation loops between 0 and length - 1 ;)
     );
+    // console.log(`indx: ${currentIndex}/${product.images.length}`); // Confy way to log things out ;)
   };
 
   // Check whether the product has any images
@@ -42,7 +45,7 @@ export default function ImageScroll({ product }: ProductCardProps) {
           }}
           className={`
             absolute top-50 right-0 bg-white/90
-           hover:bg-gray-300 active:bg-gray-200 text-black text-3xl cursor-pointer 
+            hover:bg-gray-300 active:bg-gray-200 text-black text-3xl cursor-pointer 
             px-2.5 py-1 group invisible group-hover:visible transition-all duration-200 ease-in`}
         >
           {">"}

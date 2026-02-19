@@ -1,21 +1,56 @@
 "use client";
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { Slider } from "./slider";
+import { ProductCtx } from "@/context/product-context";
+import { getProducts2 } from "@/data/product";
 
-// -- What is my sliders role before I start implementing it? -- //
+// Getter and Setter definition of the price value state
+type PriceValue = {
+  value: number; //Getter
+  setValue: (value: number) => void; //Setter - arrow function definition
+};
+// Min Max Props required for PriceInput/PriceSliderDual
+interface PriceInputProps {
+  min: PriceValue;
+  max: PriceValue;
+}
 
-// My getProducts holds the min/max price, so its job should be to render correctly in the URL by making sure the URL is correct
-// My slider should then have some hook for interactivity and update the url params on submit button
-// Perhaps ill have two sliders which each determine min/max with a input field which shows the current value for each slider
+interface PriceSliderDualProps {
+  min: number;
+  max: number;
+}
 
-export default function PriceSliderDual({ keyName }: { keyName: string }) {
-  // States with a current value and a function which updates it
-  const [val, setVal] = useState(0);
-  const [value, setValue] = useState([0, 9]);
-  console.log(keyName);
+function PriceInputFields({ min, max }: PriceInputProps) {
+  return (
+    <div>
+      <label htmlFor="min-text">Minimum value</label>
+      <input
+        className="bg-pink-400"
+        type="text"
+        id="min-text"
+        name="min"
+        value={min.value}
+        onChange={(e) => min.setValue(Number(e.target.value))}
+      />
+
+      <label htmlFor="max-text">Maximum value</label>
+      <input
+        className="bg-pink-400"
+        type="text"
+        id="max-text"
+        name="max"
+        value={max.value}
+        onChange={(e) => max.setValue(Number(e.target.value))}
+      />
+    </div>
+  );
+}
+
+export default function PriceSliderDual(props: PriceSliderDualProps) {
+  const { min, max, priceRange, setPriceRange } = useContext(ProductCtx);
 
   // Reads the searchParams - URL
   const searchParams = useSearchParams();
@@ -26,35 +61,54 @@ export default function PriceSliderDual({ keyName }: { keyName: string }) {
   // Allows us to change the server value, meaning we can manipulate the URL
   const router = useRouter();
 
-  const priceChange = useDebouncedCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      // TODO: Implement logic here...
-      const newVal = event.target.value;
+  function updateValue(min: number, max: number) {
+    // Clones my current URL so i dont lose it later later on if I have categories selected already
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("price_min", min.toString());
+    params.set("price_max", max.toString());
 
-      // Clones my current URL so i dont lose it later later on if I have categories selected already
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(keyName, newVal);
-      setVal(Number(newVal));
+    // Updates URL
+    router.push(`${pathName}?${params.toString()}`);
+  }
 
-      // Updates URL
-      router.push(`${pathName}?${params.toString()}`);
-    },
-    200,
-  );
+  const setPriceRangeAndUpdateURL = useDebouncedCallback((value: number[]) => {
+    // Update url
+    updateValue(value[0], value[1]);
+
+    // Apply changes
+    setPriceRange(value);
+  }, 5);
+
+  // const priceChange = useDebouncedCallback(
+  //   (event: React.ChangeEvent<HTMLInputElement>) => {
+  //     const newVal = event.target.value;
+
+  //     // Clones my current URL so i dont lose it later later on if I have categories selected already
+  //     const params = new URLSearchParams(searchParams.toString());
+  //     params.set(, newVal); // TODO: NEEDS FIX
+  //     setVal(Number(newVal));
+
+  //     // Updates URL
+  //     router.push(`${pathName}?${params.toString()}`);
+  //   },
+  //   200,
+  // );
 
   return (
-    <div className="my-5">
-      <label htmlFor="DualSlider">Min/Max Price</label>
-      <Slider
-        id="DualSlider"
-        value={value}
-        onValueChange={setValue}
-        onChange={priceChange}
-        min={0}
-        max={100000}
-        step={100}
-      />
-      {/* <span className="border-2 p- mx-2">{val}</span>
+    <>
+      <div className="my-5">
+        <label htmlFor="DualSlider">Min/Max Price</label>
+        <Slider
+          id="DualSlider"
+          value={priceRange}
+          onValueChange={setPriceRangeAndUpdateURL}
+          min={0}
+          max={100000}
+          step={100}
+        />
+        {/*TODO: Use an object maybe*/}
+        <PriceInputFields min={min} max={max} />
+        {/* <span className="border-2 p- mx-2">{val}</span>
       <label htmlFor="slider">Price Slider</label>
       <div>
         <input
@@ -82,7 +136,8 @@ export default function PriceSliderDual({ keyName }: { keyName: string }) {
           <option value="100000" label="100000"></option>
         </datalist>
       </div> */}
-      {/* TODO: JSX LOGIC HERE...  */}
-    </div>
+        {/* TODO: JSX LOGIC HERE...  */}
+      </div>
+    </>
   );
 }
