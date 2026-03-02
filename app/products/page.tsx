@@ -54,8 +54,8 @@ export default async function productPage(params: PageProps<"/">) {
 
           <PriceSliderDual min={minPriceNumber} max={maxPriceNumber} />
           <LimitSelect />
-          <PriceSlider keyName="price_min" />
-          <PriceSlider keyName="price_max" />
+          {/* <PriceSlider keyName="price_min" />
+          <PriceSlider keyName="price_max" /> */}
 
           <div className="container mx-auto text-center grid">
             <span>
